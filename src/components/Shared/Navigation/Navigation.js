@@ -13,6 +13,7 @@ import { Box } from "@mui/system";
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import DrawerComponent from "./DrawerComponent";
 import MenuIcon from "@mui/icons-material/Menu";
+import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
     const [openDrawer, setOpenDrawer] = useState(true); //
@@ -37,7 +38,7 @@ const Navigation = () => {
                             {/* logo */}
                             <Box>
                                 <IconButton>
-                                    <DirectionsCarIcon sx={{ fontSize: "2.4rem", marginRight: '5px', color: 'white' }} />
+                                    <DirectionsCarIcon sx={{ fontSize: "2.4rem", marginRight: '15px', color: 'white' }} />
                                     <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'white' }}>
                                         Topcar
                                     </Typography>
@@ -51,39 +52,64 @@ const Navigation = () => {
                                     setOpenDrawer={setOpenDrawer}
                                 />
                             ) : (
-                                <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                                        News
-                                    </Typography>
+                                <Box style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                    <Box>
+                                        <NavLink
+                                            activeStyle={{
+                                                fontWeight: "bold",
+                                                borderBottom: '1px solid white',
+                                                color: 'white',
+                                                textDecoration: 'none',
+                                                marginRight: '15px',
+                                            }}
+                                            to="/"
+                                        >
+                                            FAQs
+                                        </NavLink>
+                                    </Box>
+                                    <Box>
+                                        <NavLink
+                                            activeStyle={{
+                                                fontWeight: "bold",
+                                                borderBottom: '1px solid white',
+                                                color: 'white',
+                                                textDecoration: 'none',
+                                                marginRight: '15px',
+                                            }}
+                                            to="/"
+                                        >
+                                            FAQs
+                                        </NavLink>
+                                    </Box>
+                                    <Box>
+                                        <NavLink
+                                            activeStyle={{
+                                                fontWeight: "bold",
+                                                borderBottom: '1px solid white',
+                                                color: 'white',
+                                                textDecoration: 'none',
+                                                marginRight: '15px',
+                                            }}
+                                            to="/"
+                                        >
+                                            FAQs
+                                        </NavLink>
+                                    </Box>
+                                    <Box>
+                                        <NavLink
+                                            activeStyle={{
+                                                fontWeight: "bold",
+                                                borderBottom: '1px solid white',
+                                                color: 'white',
+                                                textDecoration: 'none',
+                                                marginRight: '15px',
+                                            }}
+                                            to="/"
+                                        >
+                                            FAQs
+                                        </NavLink>
+                                    </Box>
 
-                                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                                        News
-                                    </Typography>
-
-                                    <Typography
-                                        sx={{
-                                            cursor: "pointer",
-                                            color: "#616161",
-                                        }}
-                                    >
-                                        Men
-                                    </Typography>
-                                    <Typography
-                                        sx={{
-                                            cursor: "pointer",
-                                            color: "#616161",
-                                        }}
-                                    >
-                                        Women
-                                    </Typography>
-                                    <Typography
-                                        sx={{
-                                            cursor: "pointer",
-                                            color: "#616161",
-                                        }}
-                                    >
-                                        FAQ
-                                    </Typography>
                                 </Box>
                             )}
 
@@ -101,7 +127,7 @@ const Navigation = () => {
                     </Toolbar>
                 </AppBar>
             </Box>
-        </Container>
+        </Container >
     );
 };
 
