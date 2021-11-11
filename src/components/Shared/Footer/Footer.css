@@ -1,0 +1,16 @@
+.s-border{
+    border-bottom: 2px solid rgb(41, 27, 27);
+}
+.social-icon{
+    text-align: end;
+}
+
+.single-icon{
+    margin: 0 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .social-icon{
+        text-align: center;
+    }
+}

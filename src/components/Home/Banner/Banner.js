@@ -12,7 +12,7 @@ const Banner = () => {
     return (
         // <Carousel showArrows={true} onChange={onChange} onClickItem={onClickItem} onClickThumb={onClickThumb}>
         <Carousel infiniteLoop={true} useKeyboardArrows autoPlay showArrows={true} showThumbs={false}>
-            <div>
+            <div id="carousel">
                 <img className="banner-img" src={banner1} alt="banner-img" />
                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                     <div className="legend-banner">
