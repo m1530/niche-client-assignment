@@ -1,4 +1,4 @@
-import { Button, Container, Grid, TextField, Typography } from '@mui/material';
+import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
@@ -6,6 +6,7 @@ import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import loginBg from '../../../images/banner/banner4.jpg';
 import './Login.css';
 import useAuth from '../../../hooks/useAuth';
+import google from '../../../images/login/google.png';
 
 
 const useStyles = makeStyles({
@@ -18,7 +19,7 @@ const useStyles = makeStyles({
 
 const Login = () => {
 
-    const { user, logIn } = useAuth();
+    const { googleSignIn, logIn, isLoading, user, userError } = useAuth();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -39,11 +40,18 @@ const Login = () => {
         e.preventDefault();
     }
 
+    const googleLogin = () => {
+        googleSignIn(location, history)
+    }
+
     const classes = useStyles();
     return (
         <Container sx={{ mt: 4 }}>
             <Grid container alignItems="stretch" spacing={0}>
                 <Grid item xs={12} md={6} sx={{ boxShadow: 2, p: 2 }} className="grid-section make-border-radius">
+                    {isLoading && <CircularProgress />}
+                    {user?.email && <Alert severity="success">User Created.</Alert>}
+                    {userError && <Alert severity="error">{userError}</Alert>}
                     <form onSubmit={handleLogin}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                             <Typography variant="h4" gutterBottom component="div">
@@ -74,7 +82,14 @@ const Login = () => {
                                 to="/register">
                                 New User? Please Register
                             </NavLink>
-
+                            {/* google log in */}
+                            <Button variant="outlined" style={{ color: 'black', marginTop: '20px' }} size="small" onClick={googleLogin}>
+                                <img
+                                    width="26px"
+                                    src={google}
+                                    alt="github-icon"
+                                    style={{ marginRight: '10px' }}
+                                /> Sign in with Google</Button>
                         </Box>
                     </form>
                 </Grid>
@@ -84,9 +99,6 @@ const Login = () => {
 
                     <Box className="image-text" style={{ height: '100%' }}>
                         <img src={loginBg} className="login-img" alt="login-img" />
-                        {/* <Typography className="text-header" sx={{ fontWeight: 'bold' }} variant="h4" gutterBottom component="div">
-                            Welcome to <br />Topcar
-                        </Typography> */}
                         <h1 className="text-header">Welcome to <br />Topcar</h1>
                     </Box>
 

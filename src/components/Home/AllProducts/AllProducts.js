@@ -1,5 +1,6 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import useProducts from '../../../hooks/useProducts';
 
 const AllProducts = () => {
@@ -32,8 +33,9 @@ const AllProducts = () => {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small">Share</Button>
-                                    <Button size="small">Learn More</Button>
+                                    <NavLink to={`/purchase/${product._id}`}>
+                                        <Button size="small">Buy Now</Button>
+                                    </NavLink>
                                 </CardActions>
                             </Card>
                         </Grid>

@@ -1,0 +1,44 @@
+.container {
+  overflow-x: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  padding: 10px;
+  display: block;
+}
+table{
+    width: 95%;
+    display: block;
+    overflow-x: auto;
+}
+
+.title {
+  margin-top: 20px;
+  text-align: center;
+}
+
+tr {
+  height: 40px !important;
+}
+.tableData{
+  display: block;
+  overflow: visible;
+}
+
+@media only screen and(max-width: 760px)
+  {
+
+     .container {
+  overflow-x: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  display: block;
+  padding: 10px;
+}
+table{
+    width: 55%;
+    display: block;
+    overflow-x: auto;
+}
+   }

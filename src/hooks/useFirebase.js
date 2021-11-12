@@ -1,5 +1,5 @@
 import initializeApplication from '../components/Login/Firebase/firebase.init';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState, useEffect } from 'react';
 
 
@@ -8,11 +8,28 @@ initializeApplication();
 const useFirebase = () => {
 
     const auth = getAuth();
+    const googleProvider = new GoogleAuthProvider();
 
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [userError, setUserError] = useState('');
     const [admin, setAdmin] = useState(false);
+
+
+    // google sign in
+    const googleSignIn = (location, history) => {
+        setIsLoading(true);
+        signInWithPopup(auth, googleProvider)
+            .then((result) => {
+                const user = result.user;
+                saveUserinGoogleLogin(user.email, user.displayName);
+                const url = location?.state?.from || '/';
+                history.push(url);
+                setUserError('');
+            }).catch((error) => {
+                setUserError(error.message);
+            }).finally(() => setIsLoading(false));
+    }
 
     // register user
     const signUpUsingEmail = (email, password, name, history) => {
@@ -23,6 +40,7 @@ const useFirebase = () => {
                 console.log(user);
                 const newUser = { email, displayName: name };
                 setUser(newUser);
+                saveUserInEmailLogin(email, name)
                 setUserError('');
                 alert('Registration successful.');
                 updateProfile(auth.currentUser, {
@@ -42,6 +60,14 @@ const useFirebase = () => {
 
     }
 
+    // load admin
+
+    useEffect(() => {
+        fetch(`http://localhost:7000/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin));
+    }, [user.email]);
+
     // login user
     const logIn = (email, password, location, history) => {
         setIsLoading(true);
@@ -56,8 +82,9 @@ const useFirebase = () => {
             }).finally(() => setIsLoading(false));
     }
 
+    // check auth state
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
+        const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
             } else {
@@ -65,9 +92,10 @@ const useFirebase = () => {
             }
             setIsLoading(false);
         });
-        return () => unsubscribe;
-    }, [auth]);
+        return () => unsubscribed;
+    }, [auth])
 
+    // logout option
     const logout = () => {
         setIsLoading(true);
         signOut(auth).then(() => {
@@ -77,9 +105,34 @@ const useFirebase = () => {
         }).finally(() => setIsLoading(false));
     }
 
+    // save user in database from email password login
+    const saveUserInEmailLogin = (email, displayName) => {
+        const user = { email, displayName };
+        fetch('http://localhost:7000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
+    // save user in database from google login
+    const saveUserinGoogleLogin = (email, displayName) => {
+        const user = { email, displayName };
+        fetch('http://localhost:7000/users', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
+
 
     return {
-        user, admin, isLoading, logout, userError, signUpUsingEmail, logIn
+        user, admin, isLoading, logout, userError, signUpUsingEmail, logIn, googleSignIn, admin
     }
 
 

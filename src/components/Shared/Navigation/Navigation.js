@@ -108,14 +108,36 @@ const Navigation = () => {
                                         }}
                                         to="/products"
                                     >
-                                        FAQs
+                                        Review
                                     </NavLink>
+                                    {
+                                        user?.email && <NavLink
+                                            style={{
+                                                marginRight: '15px', color: 'white', textDecoration: 'none'
+                                            }}
+                                            activeStyle={{
+                                                fontWeight: "bold",
+                                                color: 'white',
+                                                textDecoration: 'none',
+                                            }}
+                                            to="/dashboard"
+                                        >
+                                            Dashboard
+                                        </NavLink>
+                                    }
                                 </Box>
                                 <Box>
                                     {
                                         user?.displayName ? <Button style={{ color: 'white' }} size="small" onClick={logout}>Logout</Button>
                                             :
-                                            <NavLink to="/login" style={{ marginRight: '15px', color: 'white', textDecoration: 'none' }}>Login</NavLink>
+                                            <NavLink to="/login" style={{ marginRight: '15px', color: 'white', textDecoration: 'none' }}
+                                                activeStyle={{
+                                                    fontWeight: "bold",
+                                                    color: 'white',
+                                                    textDecoration: 'none',
+                                                }}>
+                                                Login
+                                            </NavLink>
                                     }
                                 </Box>
 
