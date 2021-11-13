@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import Paper from '@mui/material/Paper';
+import Navigation from '../../Shared/Navigation/Navigation';
+import Footer from '../../Shared/Footer/Footer';
 
 const Purchase = () => {
     const { productId } = useParams();
@@ -61,128 +63,132 @@ const Purchase = () => {
     }
 
     return (
-        <Container>
-            <Typography sx={{ my: 4, textAlign: 'center' }} variant="h4" gutterBottom component="div">
-                Complete Your Order
-            </Typography>
-            {/* Purchase product information */}
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
-                    <Typography sx={{ textAlign: 'center' }} variant="h5" gutterBottom component="div">
-                        Product Information
-                    </Typography>
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            flexWrap: 'wrap',
-                            '& > :not(style)': {
-                                m: 1,
-                                p: 4,
-                                width: '100%'
-                            },
-                        }}
-                    >
-                        <Paper elevation={3} >
-                            <Typography sx={{ textAlign: 'center' }} variant="h6" gutterBottom component="div">
-                                Product Name: {products.name}
-                            </Typography>
-                            <img src={products.img} alt="product-img" style={{ width: '95%' }} />
-                            <Typography sx={{ textAlign: 'center' }} variant="body1" gutterBottom component="div">
-                                Product Price: {products.price}
-                            </Typography>
-                            <Typography sx={{ textAlign: 'center' }} variant="h6" gutterBottom component="div">
-                                Product Description: {products.desc}
-                            </Typography>
+        <Box>
+            <Navigation />
+            <Container>
+                <Typography sx={{ my: 4, textAlign: 'center' }} variant="h4" gutterBottom component="div">
+                    Complete Your Order
+                </Typography>
+                {/* Purchase product information */}
+                <Grid container spacing={2}>
+                    <Grid item xs={12} md={6}>
+                        <Typography sx={{ textAlign: 'center' }} variant="h5" gutterBottom component="div">
+                            Product Information
+                        </Typography>
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                '& > :not(style)': {
+                                    m: 1,
+                                    p: 4,
+                                    width: '100%'
+                                },
+                            }}
+                        >
+                            <Paper elevation={3} >
+                                <Typography sx={{ textAlign: 'center' }} variant="h6" gutterBottom component="div">
+                                    Product Name: {products.name}
+                                </Typography>
+                                <img src={products.img} alt="product-img" style={{ width: '95%' }} />
+                                <Typography sx={{ textAlign: 'center' }} variant="body1" gutterBottom component="div">
+                                    Product Price: {products.price}
+                                </Typography>
+                                <Typography sx={{ textAlign: 'center' }} variant="h6" gutterBottom component="div">
+                                    Product Description: {products.desc}
+                                </Typography>
 
-                        </Paper>
-                    </Box>
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    {/* order submit from */}
-                    <Typography sx={{ textAlign: 'center' }} variant="h5" gutterBottom component="div">
-                        Order booking from
-                    </Typography>
-                    <form onSubmit={handleAddOrder}>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                            <TextField
-                                sx={{ width: '75%', m: 2, }}
-                                disabled
-                                id="filled-size-small"
-                                variant="filled"
-                                size="small"
-                                name="name"
-                                defaultValue={user.displayName}
-                                onBlur={handleOnBlur}
-                            />
-                            <TextField
-                                sx={{ width: '75%', m: 2, }}
-                                defaultValue={user.email}
-                                disabled
-                                id="filled-size-small"
-                                variant="filled"
-                                size="small"
-                                name="email"
-                                onBlur={handleOnBlur}
-                            />
-                            <TextField
-                                sx={{ width: '75%', m: 2, }}
-                                label={products.name}
-                                defaultValue={products?.name}
-                                disabled
-                                id="filled-size-small"
-                                variant="filled"
-                                size="small"
-                                name="product"
-                                onBlur={handleOnBlur}
-                            />
-                            <TextField
-                                sx={{ width: '75%', m: 2, }}
-                                label={products.price}
-                                defaultValue={products?.price}
-                                disabled
-                                id="filled-size-small"
-                                variant="filled"
-                                size="small"
-                                name="price"
-                                onBlur={handleOnBlur}
-                            />
-                            <TextField
-                                sx={{ width: '75%', m: 2, }}
-                                label='Enter your address'
-                                id="filled-size-small"
-                                variant="filled"
-                                size="small"
-                                name="address"
-                                onBlur={handleOnBlur}
-                            />
-                            <TextField
-                                sx={{ width: '75%', m: 2, }}
-                                label='Enter your phone number'
-                                id="filled-size-small"
-                                variant="filled"
-                                size="small"
-                                name="phone"
-                                onBlur={handleOnBlur}
-                            />
-                            <TextField
-                                sx={{ width: '75%', m: 2, }}
-                                id="filled-size-small"
-                                defaultValue="pending"
-                                disabled
-                                variant="filled"
-                                size="small"
-                                name="status"
-                                onBlur={handleOnBlur}
-                            />
-
-                            <Button sx={{ width: '25%', bgcolor: '#ff9933', fontWeight: 'bold' }} type="submit" variant="contained">Buy</Button>
-
+                            </Paper>
                         </Box>
-                    </form>
-                </Grid>
-            </Grid>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        {/* order submit from */}
+                        <Typography sx={{ textAlign: 'center' }} variant="h5" gutterBottom component="div">
+                            Order booking from
+                        </Typography>
+                        <form onSubmit={handleAddOrder}>
+                            <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                                <TextField
+                                    sx={{ width: '75%', m: 2, }}
+                                    disabled
+                                    id="filled-size-small"
+                                    variant="filled"
+                                    size="small"
+                                    name="name"
+                                    defaultValue={user.displayName}
+                                    onBlur={handleOnBlur}
+                                />
+                                <TextField
+                                    sx={{ width: '75%', m: 2, }}
+                                    defaultValue={user.email}
+                                    disabled
+                                    id="filled-size-small"
+                                    variant="filled"
+                                    size="small"
+                                    name="email"
+                                    onBlur={handleOnBlur}
+                                />
+                                <TextField
+                                    sx={{ width: '75%', m: 2, }}
+                                    label={products.name}
+                                    defaultValue={products?.name}
+                                    disabled
+                                    id="filled-size-small"
+                                    variant="filled"
+                                    size="small"
+                                    name="product"
+                                    onBlur={handleOnBlur}
+                                />
+                                <TextField
+                                    sx={{ width: '75%', m: 2, }}
+                                    label={products.price}
+                                    defaultValue={products?.price}
+                                    disabled
+                                    id="filled-size-small"
+                                    variant="filled"
+                                    size="small"
+                                    name="price"
+                                    onBlur={handleOnBlur}
+                                />
+                                <TextField
+                                    sx={{ width: '75%', m: 2, }}
+                                    label='Enter your address'
+                                    id="filled-size-small"
+                                    variant="filled"
+                                    size="small"
+                                    name="address"
+                                    onBlur={handleOnBlur}
+                                />
+                                <TextField
+                                    sx={{ width: '75%', m: 2, }}
+                                    label='Enter your phone number'
+                                    id="filled-size-small"
+                                    variant="filled"
+                                    size="small"
+                                    name="phone"
+                                    onBlur={handleOnBlur}
+                                />
+                                <TextField
+                                    sx={{ width: '75%', m: 2, }}
+                                    id="filled-size-small"
+                                    defaultValue="pending"
+                                    disabled
+                                    variant="filled"
+                                    size="small"
+                                    name="status"
+                                    onBlur={handleOnBlur}
+                                />
 
-        </Container>
+                                <Button sx={{ width: '25%', bgcolor: '#ff9933', fontWeight: 'bold' }} type="submit" variant="contained">Buy</Button>
+
+                            </Box>
+                        </form>
+                    </Grid>
+                </Grid>
+
+            </Container>
+            <Footer></Footer>
+        </Box>
     );
 };
 
