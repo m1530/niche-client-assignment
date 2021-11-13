@@ -4,7 +4,7 @@ import useAuth from '../../../hooks/useAuth';
 import React from 'react';
 
 function AdminRoute({ children, ...rest }) {
-    const { user, admin, isLoading } = useAuth();
+    const { user, admin } = useAuth();
     if (!admin) {
         return (
             <CircularProgress />

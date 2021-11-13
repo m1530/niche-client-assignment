@@ -12,7 +12,7 @@ const LatestNews = () => {
     return (
         <Box>
             <Navigation />
-            <Container>
+            <Container style={{ marginBottom: '60px' }}>
                 <Typography id="latestNews" variant="h5" gutterBottom component="div" sx={{ textAlign: 'center', fontWeight: 'bold' }} style={{ marginTop: '60px', marginBottom: '40px' }}>
                     Our All News
                 </Typography>
@@ -20,13 +20,13 @@ const LatestNews = () => {
                     {
                         // display all news in card
                         newses.map((news) => (
-                            <Grid item xs={12} md={4} key={news._id}>
-                                <Paper elevation={3} sx={{ p: 2 }}>
+                            <Grid item xs={12} md={4} key={news._id} style={{ marginBottom: '30px' }}>
+                                <Paper elevation={3} sx={{ p: 2 }} style={{ height: '100%' }}>
                                     <Grid container spacing={2}>
-                                        <Grid item xs={12} md={4} >
-                                            <img src={news?.img} alt="news-img" style={{ width: '75%' }} />
+                                        <Grid item xs={12} md={5} >
+                                            <img src={news?.img} alt="news-img" style={{ width: '90%', height: '180px', borderRadius: '4px' }} />
                                         </Grid>
-                                        <Grid item xs={12} md={8} >
+                                        <Grid item xs={12} md={7} >
                                             <Typography variant="h6" gutterBottom component="div">
                                                 {news?.name}
                                             </Typography>

@@ -1,6 +1,6 @@
-import { Button, Container, Grid, Input, TextField, Typography } from '@mui/material';
+import { Button, Container, Grid, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import Paper from '@mui/material/Paper';
@@ -26,7 +26,7 @@ const Purchase = () => {
 
         console.log(orderData);
         // submit order
-        fetch('http://localhost:7000/order', {
+        fetch('https://nameless-journey-27300.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -44,7 +44,7 @@ const Purchase = () => {
     }
     // load product by id
     useEffect(() => {
-        const url = `http://localhost:7000/products/${productId}`;
+        const url = `https://nameless-journey-27300.herokuapp.com/products/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data));

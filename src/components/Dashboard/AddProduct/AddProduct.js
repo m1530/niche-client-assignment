@@ -30,7 +30,7 @@ const AddProduct = () => {
     // function for submit handle request
     const handleAddProduct = e => {
         const reviewData = { name, img, desc, price }
-        fetch('http://localhost:7000/products', {
+        fetch('https://nameless-journey-27300.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

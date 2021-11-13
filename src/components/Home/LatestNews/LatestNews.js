@@ -17,12 +17,12 @@ const LatestNews = () => {
                 <Grid container spacing={2}>
                     {
                         // display all news in card
-                        newses.map((news) => (
+                        newses.slice(0, 6).map((news) => (
                             <Grid item xs={12} md={4} key={news._id}>
                                 <Paper elevation={3} sx={{ p: 2 }}>
                                     <Grid container spacing={2}>
                                         <Grid item xs={12} md={4} style={{ textAlign: 'center' }}>
-                                            <img src={news.img} alt="news-img" style={{ width: '75%', borderRadius: '10px' }} />
+                                            <img src={news.img} alt="news-img" style={{ width: '90%', borderRadius: '10px' }} />
                                         </Grid>
                                         <Grid item xs={12} md={8} >
                                             <Typography variant="h6" gutterBottom component="div">

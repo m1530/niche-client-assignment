@@ -30,7 +30,7 @@ const CreateReview = () => {
     // submit form request
     const handleReview = e => {
         const reviewData = { reviewer, designation, reviewDesc, ratting }
-        fetch('http://localhost:7000/makeReview', {
+        fetch('https://nameless-journey-27300.herokuapp.com/makeReview', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

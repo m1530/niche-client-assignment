@@ -21,7 +21,7 @@ export default function ManageOrder() {
     // handle status change request submit
     const handleStatusUpdate = id => {
         const status = { status: "shipped" };
-        const url = `http://localhost:7000/orders/${id}`;
+        const url = `https://nameless-journey-27300.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -33,7 +33,7 @@ export default function ManageOrder() {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     alert('Update Successful');
-                    fetch(`http://localhost:7000/order`)
+                    fetch(`https://nameless-journey-27300.herokuapp.com/order`)
                         .then(res => res.json())
                         .then(data => setOrders(data))
                 }
@@ -44,7 +44,7 @@ export default function ManageOrder() {
     const handleOrderDelete = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:7000/order/${id}`;
+            const url = `https://nameless-journey-27300.herokuapp.com/order/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

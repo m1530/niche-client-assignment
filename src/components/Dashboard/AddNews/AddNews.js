@@ -30,7 +30,7 @@ const AddNews = () => {
     // handle request submit from
     const handleNews = e => {
         const newsData = { name, img, date, desc }
-        fetch('http://localhost:7000/addNews', {
+        fetch('https://nameless-journey-27300.herokuapp.com/addNews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

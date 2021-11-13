@@ -13,7 +13,7 @@ const MakeAdmin = () => {
     // submit request for making admin
     const handleMakeAdmin = e => {
         const user = { email };
-        fetch('http://localhost:7000/users/admin', {
+        fetch('https://nameless-journey-27300.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

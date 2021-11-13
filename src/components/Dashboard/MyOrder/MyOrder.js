@@ -1,5 +1,4 @@
 import * as React from 'react';
-import useAuth from '../../../hooks/useAuth';
 import { useParams } from "react-router-dom";
 import { Box } from '@mui/system';
 import List from '@mui/material/List';
@@ -20,7 +19,7 @@ const MyOrder = () => {
 
     // fetch my order using use params
     React.useEffect(() => {
-        const url = `http://localhost:7000/myorders/${orderId}`;
+        const url = `https://nameless-journey-27300.herokuapp.com/myorders/${orderId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setMyOrder(data));
@@ -32,7 +31,7 @@ const MyOrder = () => {
     const handlePackegeDelete = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:7000/order/${id}`;
+            const url = `https://nameless-journey-27300.herokuapp.com/order/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

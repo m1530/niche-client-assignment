@@ -22,7 +22,7 @@ export default function ManageProducts() {
     const handleProductDelete = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:7000/products/${id}`;
+            const url = `https://nameless-journey-27300.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

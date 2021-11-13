@@ -10,7 +10,7 @@ const ReadNews = () => {
 
     // fetch single news
     useEffect(() => {
-        fetch(`http://localhost:7000/news/${newsId}`)
+        fetch(`https://nameless-journey-27300.herokuapp.com/news/${newsId}`)
             .then(res => res.json())
             .then(data => setReadNews(data))
     }, [newsId]);

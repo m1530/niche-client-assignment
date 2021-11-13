@@ -110,11 +110,12 @@ const DrawerComponent = ({ openDrawer, setOpenDrawer }) => {
                         </ListItemText>
                     </ListItemIcon>
                 </ListItem>
-                <ListItem divider button onClick={() => setOpenDrawer(false)}>
-                    <ListItemIcon>
-                        <ListItemText>
-                            {
-                                user?.email && <NavLink
+
+                {
+                    user?.email && <ListItem divider button onClick={() => setOpenDrawer(false)}>
+                        <ListItemIcon>
+                            <ListItemText>
+                                <NavLink
                                     style={{
                                         marginRight: '15px', color: 'black', textDecoration: 'none'
                                     }}
@@ -127,20 +128,22 @@ const DrawerComponent = ({ openDrawer, setOpenDrawer }) => {
                                 >
                                     Dashboard
                                 </NavLink>
-                            }
-                        </ListItemText>
-                    </ListItemIcon>
-                </ListItem>
-                <ListItem divider button onClick={() => setOpenDrawer(false)}>
-                    <ListItemIcon>
-                        <ListItemText>
-                            {
-                                user?.displayName && <Button style={{ color: 'black' }} size="small" >{user.displayName}</Button>
 
-                            }
-                        </ListItemText>
-                    </ListItemIcon>
-                </ListItem>
+                            </ListItemText>
+                        </ListItemIcon>
+                    </ListItem>
+                }
+
+                {
+                    user?.displayName && <ListItem divider button onClick={() => setOpenDrawer(false)}>
+                        <ListItemIcon>
+                            <ListItemText>
+                                <Button style={{ color: 'black' }} size="small" >{user.displayName}</Button>
+
+                            </ListItemText>
+                        </ListItemIcon>
+                    </ListItem>
+                }
                 <ListItem divider button onClick={() => setOpenDrawer(false)}>
                     <ListItemIcon>
                         <ListItemText>
