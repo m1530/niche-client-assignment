@@ -1,11 +1,6 @@
 import * as React from 'react';
 import { useParams } from "react-router-dom";
 import { Box } from '@mui/system';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import Divider from '@mui/material/Divider';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 // import './MyOrder.css';
 
@@ -13,7 +8,6 @@ import { Button } from '@mui/material';
 
 const MyOrder = () => {
     let { orderId } = useParams();
-    let i = 1;
 
     const [myOrder, setMyOrder] = React.useState([]);
 
@@ -49,65 +43,30 @@ const MyOrder = () => {
     return (
 
         <Box>
-            <h1>My Order List</h1>
-            {/* load My order like list */}
-            {
-                myOrder.map(row => (
-                    < List key={row._id} sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }
-                    }>
-                        <ListItem alignItems="flex-start">
-                            <ListItemText
-                                secondary={
-                                    <React.Fragment>
-                                        <Typography
-                                            sx={{ display: 'inline', marginRight: '10px' }}
-                                            component="span"
-                                            variant="body2"
-                                            color="text.primary"
-                                        >
-                                            {i++}.
-                                        </Typography>
-                                        <Typography
-                                            sx={{ display: 'inline' }}
-                                            component="span"
-                                            variant="body2"
-                                            color="text.primary"
-                                        >
-                                            {row.ProductName}
-                                        </Typography>
-                                        <Typography
-                                            sx={{ display: 'inline', marginLeft: '5px' }}
-                                            component="span"
-                                            variant="body2"
-                                            color="text.primary"
-                                        >
-                                            {row.ProductPrice}
-                                        </Typography>
-                                        <Typography
-                                            sx={{ display: 'inline', marginLeft: '5px' }}
-                                            component="span"
-                                            variant="body2"
-                                            color="text.primary"
-                                        >
-                                            {row.address}
-                                        </Typography>
-                                        <Typography
-                                            sx={{ display: 'inline', marginLeft: '5px' }}
-                                            component="span"
-                                            variant="body2"
-                                            color="text.primary"
-                                        >
-                                            {row.status}
-                                        </Typography>
-                                        <Button onClick={() => handlePackegeDelete(row._id)} size="small">Cancel</Button>
-                                    </React.Fragment>
-                                }
-                            />
-                        </ListItem>
-                        <Divider variant="inset" component="li" />
-                    </List >
-                ))
-            }
+            <table>
+                <caption>My Order</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {myOrder.map((row) => (<tr key={row._id}>
+                        <td data-label="Product Name">{row.ProductName}</td>
+                        <td data-label="Email">{row.ProductPrice}</td>
+                        <td data-label="Address">{row.address}</td>
+                        <td data-label="Status">{row.status}</td>
+                        <td data-label="Action">
+                            <Button onClick={() => handlePackegeDelete(row._id)} size="small">Cancel</Button>
+                        </td>
+                    </tr>
+                    ))}
+                </tbody>
+            </table>
 
         </Box >
 
