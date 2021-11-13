@@ -1,11 +1,15 @@
 import { Button, Grid, Paper, Typography, Box } from '@mui/material';
 import React from 'react';
-import AddIcon from '@mui/icons-material/Add';
 import useProducts from '../../../hooks/useProducts';
 import { NavLink, useRouteMatch } from 'react-router-dom';
 import useNews from '../../../hooks/useNews';
 import useManageOrder from '../../../hooks/useManageOrder';
 import useAuth from '../../../hooks/useAuth';
+import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
+import AnnouncementIcon from '@mui/icons-material/Announcement';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import PaymentIcon from '@mui/icons-material/Payment';
+import RateReviewIcon from '@mui/icons-material/RateReview';
 
 const UserDashboard = () => {
     const [products] = useProducts();
@@ -25,7 +29,7 @@ const UserDashboard = () => {
                             <Paper elevation={3} sx={{ p: 2 }}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5} md={3}>
-                                        <AddIcon />
+                                        <ProductionQuantityLimitsIcon style={{ color: 'yellow' }} />
                                     </Grid>
                                     <Grid item xs={7} md={9}>
                                         <Typography variant="body1" gutterBottom component="div" sx={{ fontWeight: 'bold' }}>
@@ -42,7 +46,7 @@ const UserDashboard = () => {
                             <Paper elevation={3} sx={{ p: 2 }}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5} md={3}>
-                                        <AddIcon />
+                                        <AnnouncementIcon style={{ color: 'green' }} />
                                     </Grid>
                                     <Grid item xs={7} md={9}>
                                         <Typography variant="body1" gutterBottom component="div" sx={{ fontWeight: 'bold' }}>
@@ -58,7 +62,7 @@ const UserDashboard = () => {
                             <Paper elevation={3} sx={{ p: 2 }}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5} md={3}>
-                                        <AddIcon />
+                                        <FavoriteBorderIcon style={{ color: 'red' }} />
                                     </Grid>
                                     <Grid item xs={7} md={9}>
                                         <Typography variant="body1" gutterBottom component="div" sx={{ fontWeight: 'bold' }}>
@@ -76,7 +80,7 @@ const UserDashboard = () => {
                             <Paper elevation={3} sx={{ p: 2 }}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5} md={3}>
-                                        <AddIcon />
+                                        <PaymentIcon style={{ color: 'yellowgreen' }} />
                                     </Grid>
                                     <Grid item xs={7} md={9}>
                                         <Typography variant="body1" gutterBottom component="div" sx={{ fontWeight: 'bold' }}>
@@ -91,7 +95,7 @@ const UserDashboard = () => {
                             <Paper elevation={3} sx={{ p: 2 }}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5} md={3}>
-                                        <AddIcon />
+                                        <FavoriteBorderIcon style={{ color: 'red' }} />
                                     </Grid>
                                     <Grid item xs={7} md={9}>
                                         <Typography variant="body1" gutterBottom component="div" sx={{ fontWeight: 'bold' }}>
@@ -106,7 +110,7 @@ const UserDashboard = () => {
                             <Paper elevation={3} sx={{ p: 2 }}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5} md={3}>
-                                        <AddIcon />
+                                        <RateReviewIcon style={{ color: 'gold' }} />
                                     </Grid>
                                     <Grid item xs={7} md={9}>
                                         <Typography variant="body1" gutterBottom component="div" sx={{ fontWeight: 'bold' }}>

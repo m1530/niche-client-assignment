@@ -53,7 +53,7 @@ const MyOrder = () => {
             {/* load My order like list */}
             {
                 myOrder.map(row => (
-                    < List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }
+                    < List key={row._id} sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }
                     }>
                         <ListItem alignItems="flex-start">
                             <ListItemText
@@ -82,6 +82,14 @@ const MyOrder = () => {
                                             color="text.primary"
                                         >
                                             {row.ProductPrice}
+                                        </Typography>
+                                        <Typography
+                                            sx={{ display: 'inline', marginLeft: '5px' }}
+                                            component="span"
+                                            variant="body2"
+                                            color="text.primary"
+                                        >
+                                            {row.address}
                                         </Typography>
                                         <Typography
                                             sx={{ display: 'inline', marginLeft: '5px' }}

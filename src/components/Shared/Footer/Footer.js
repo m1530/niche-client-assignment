@@ -1,6 +1,6 @@
 import { Button, ButtonGroup, Container, Divider, Grid, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Footer.css';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -14,6 +14,30 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 const Footer = () => {
+    const [email, setEmail] = useState('{}');
+    const handleEmail = e => {
+        setEmail(e.target.value);
+    }
+
+    const handleSubscribe = e => {
+        const newsData = { email }
+        // add new service in mongodb using axios
+        fetch('https://nameless-journey-27300.herokuapp.com/subscribe', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newsData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('Subscribe Successfully');
+                    e.target.reset();
+                }
+            })
+        e.preventDefault();
+    }
     return (
         <Box sx={{ flexGrow: 1, bgcolor: '#bdbdbd' }}>
             <Container>
@@ -129,13 +153,15 @@ const Footer = () => {
 
                         <Box >
 
+                            <form onSubmit={handleSubscribe}>
+                                <ButtonGroup disableElevation variant="contained" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                    <TextField id="outlined-basic" onBlur={handleEmail} type="email" label="Enter your email" variant="outlined" sx={{ my: 2 }} size="small" />
+                                    <Button variant="contained" type="submit" size="medium">
+                                        Medium
+                                    </Button>
+                                </ButtonGroup>
+                            </form>
 
-                            <ButtonGroup disableElevation variant="contained" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                <TextField id="outlined-basic" label="Subscribe" variant="outlined" sx={{ my: 2 }} size="small" />
-                                <Button variant="contained" size="medium">
-                                    Medium
-                                </Button>
-                            </ButtonGroup>
                         </Box>
 
                     </Grid >

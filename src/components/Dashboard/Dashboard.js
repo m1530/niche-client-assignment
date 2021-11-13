@@ -28,6 +28,7 @@ import ManageProducts from './ManageProducts/ManageProducts';
 import ManageOrder from './ManageOrder/ManageOrder';
 import AddNews from './AddNews/AddNews';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import Subscribe from './Subscribe/Subscribe';
 
 
 
@@ -72,6 +73,8 @@ function Dashboard(props) {
                         <Link style={{ textDecoration: 'none' }} to={`${url}/manageporducts`}><Button color="inherit">Manage Product</Button></Link>
 
                         <Link style={{ textDecoration: 'none' }} to={`${url}/manageOrder`}><Button color="inherit">Manage Order</Button></Link>
+
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/subscriber`}><Button color="inherit">Subscriber</Button></Link>
 
                     </Box>
                         :
@@ -181,6 +184,9 @@ function Dashboard(props) {
                     </AdminRoute>
                     <AdminRoute path={`${path}/addNews`}>
                         <AddNews></AddNews>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/subscriber`}>
+                        <Subscribe></Subscribe>
                     </AdminRoute>
                 </Switch>
 
