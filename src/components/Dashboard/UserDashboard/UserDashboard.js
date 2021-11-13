@@ -29,7 +29,7 @@ const UserDashboard = () => {
                             <Paper elevation={3} sx={{ p: 2 }}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5} md={3}>
-                                        <ProductionQuantityLimitsIcon style={{ color: 'yellow' }} />
+                                        <ProductionQuantityLimitsIcon style={{ color: 'yellow', fontSize: '50px' }} />
                                     </Grid>
                                     <Grid item xs={7} md={9}>
                                         <Typography variant="body1" gutterBottom component="div" sx={{ fontWeight: 'bold' }}>
@@ -46,7 +46,7 @@ const UserDashboard = () => {
                             <Paper elevation={3} sx={{ p: 2 }}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5} md={3}>
-                                        <AnnouncementIcon style={{ color: 'green' }} />
+                                        <AnnouncementIcon style={{ color: 'green', fontSize: '50px' }} />
                                     </Grid>
                                     <Grid item xs={7} md={9}>
                                         <Typography variant="body1" gutterBottom component="div" sx={{ fontWeight: 'bold' }}>
@@ -62,7 +62,7 @@ const UserDashboard = () => {
                             <Paper elevation={3} sx={{ p: 2 }}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5} md={3}>
-                                        <FavoriteBorderIcon style={{ color: 'red' }} />
+                                        <FavoriteBorderIcon style={{ color: 'red', fontSize: '50px' }} />
                                     </Grid>
                                     <Grid item xs={7} md={9}>
                                         <Typography variant="body1" gutterBottom component="div" sx={{ fontWeight: 'bold' }}>
@@ -80,7 +80,7 @@ const UserDashboard = () => {
                             <Paper elevation={3} sx={{ p: 2 }}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5} md={3}>
-                                        <PaymentIcon style={{ color: 'yellowgreen' }} />
+                                        <PaymentIcon style={{ color: 'yellowgreen', fontSize: '50px' }} />
                                     </Grid>
                                     <Grid item xs={7} md={9}>
                                         <Typography variant="body1" gutterBottom component="div" sx={{ fontWeight: 'bold' }}>
@@ -95,7 +95,7 @@ const UserDashboard = () => {
                             <Paper elevation={3} sx={{ p: 2 }}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5} md={3}>
-                                        <FavoriteBorderIcon style={{ color: 'red' }} />
+                                        <FavoriteBorderIcon style={{ color: 'red', fontSize: '50px' }} />
                                     </Grid>
                                     <Grid item xs={7} md={9}>
                                         <Typography variant="body1" gutterBottom component="div" sx={{ fontWeight: 'bold' }}>
@@ -110,7 +110,7 @@ const UserDashboard = () => {
                             <Paper elevation={3} sx={{ p: 2 }}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5} md={3}>
-                                        <RateReviewIcon style={{ color: 'gold' }} />
+                                        <RateReviewIcon style={{ color: 'gold', fontSize: '50px' }} />
                                     </Grid>
                                     <Grid item xs={7} md={9}>
                                         <Typography variant="body1" gutterBottom component="div" sx={{ fontWeight: 'bold' }}>
