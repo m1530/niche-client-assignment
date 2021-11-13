@@ -1,0 +1,11 @@
+.page-not-found{
+    background-image: url('../../images/page-not-found/pagenotfound.jpg');
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.page-not-found h1{
+    color: white;
+}

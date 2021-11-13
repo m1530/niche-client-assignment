@@ -10,6 +10,7 @@ const MakeAdmin = () => {
     const handleOnBlur = e => {
         setEmail(e.target.value);
     }
+    // submit request for making admin
     const handleMakeAdmin = e => {
         const user = { email };
         fetch('http://localhost:7000/users/admin', {
@@ -32,6 +33,7 @@ const MakeAdmin = () => {
     return (
         <div>
             <h2>Make an Admin</h2>
+            {/* make admin form */}
             <form onSubmit={handleMakeAdmin}>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <TextField

@@ -3,42 +3,29 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Button from '@mui/material/Button';
 import './Banner.css';
 import { Carousel } from 'react-responsive-carousel';
-import banner1 from '../../../images/banner/banner1.jpg';
-import banner2 from '../../../images/banner/banner2.jpg';
-import banner3 from '../../../images/banner/banner3.jpg';
 import { Box } from '@mui/system';
+import { Link } from 'react-router-dom';
+import useProducts from '../../../hooks/useProducts';
 
 const Banner = () => {
+    // fetch all products from useProducts hook
+    const [products] = useProducts();
     return (
-        // <Carousel showArrows={true} onChange={onChange} onClickItem={onClickItem} onClickThumb={onClickThumb}>
         <Carousel infiniteLoop={true} useKeyboardArrows autoPlay showArrows={true} showThumbs={false}>
-            <div id="carousel">
-                <img className="banner-img" src={banner1} alt="banner-img" />
-                <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                    <div className="legend-banner">
-                        <p>Legend-banner 1</p>
-                        <Button variant="contained">Contained</Button>
+            {
+                // 4 product are shown as navigation
+                products.slice(0, 4).map(product => (
+                    <div key={product._id}>
+                        <img className="banner-img" src={product.img} alt="banner-img" style={{ width: '100%' }} />
+                        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                            <div className="legend-banner">
+                                <p>{product.name}</p>
+                                <Link to="/products" style={{ textDecoration: 'none' }}><Button variant="contained">See Details</Button></Link>
+                            </div>
+                        </Box>
                     </div>
-                </Box>
-            </div>
-            <div>
-                <img className="banner-img" src={banner2} alt="banner-img" />
-                <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                    <div className="legend-banner">
-                        <p>Legend-banner 2</p>
-                        <Button variant="contained">Contained</Button>
-                    </div>
-                </Box>
-            </div>
-            <div>
-                <img className="banner-img" src={banner3} alt="banner-img" />
-                <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                    <div className="legend-banner">
-                        <p>Legend-banner 3</p>
-                        <Button variant="contained">Contained</Button>
-                    </div>
-                </Box>
-            </div>
+                ))
+            }
         </Carousel>
     );
 };

@@ -1,0 +1,17 @@
+.table-width{
+    width: 122px;
+}
+.table-image{
+    width: 120px;
+}
+
+
+@media only screen and(max-width: 760px){      
+        .table-image{
+            width: 4px;
+        }
+        .table-width{
+            width: 5px;
+        }
+
+}

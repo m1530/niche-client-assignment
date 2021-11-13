@@ -14,7 +14,7 @@ const Purchase = () => {
     const [orderData, setOrderData] = useState(initialOrderInfo);
 
     console.log(products.name);
-
+    // handle submit order
     const handleAddOrder = e => {
         const booking = {
             ...orderData,
@@ -42,7 +42,7 @@ const Purchase = () => {
             })
         e.preventDefault();
     }
-
+    // load product by id
     useEffect(() => {
         const url = `http://localhost:7000/products/${productId}`;
         fetch(url)
@@ -50,6 +50,8 @@ const Purchase = () => {
             .then(data => setProducts(data));
     }, [productId]);
 
+
+    // take all value from input field
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -63,7 +65,7 @@ const Purchase = () => {
             <Typography sx={{ my: 4, textAlign: 'center' }} variant="h4" gutterBottom component="div">
                 Complete Your Order
             </Typography>
-
+            {/* Purchase product information */}
             <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
                     <Typography sx={{ textAlign: 'center' }} variant="h5" gutterBottom component="div">
@@ -96,6 +98,7 @@ const Purchase = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={6}>
+                    {/* order submit from */}
                     <Typography sx={{ textAlign: 'center' }} variant="h5" gutterBottom component="div">
                         Order booking from
                     </Typography>

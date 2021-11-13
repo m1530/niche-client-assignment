@@ -1,0 +1,10 @@
+.about{
+    text-align: center;
+    background-image: url('../../../images/about/about.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 70px 0px;
+    font-weight: bold;
+    color: white;
+}

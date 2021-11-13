@@ -1,11 +1,12 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
-import { Box } from '@mui/system';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Product = ({ product }) => {
+    // destructuring product information from products props
     const { _id, name, img, price, desc } = product;
     return (
+        // display all products in card
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
                 component="img"
@@ -25,8 +26,8 @@ const Product = ({ product }) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <NavLink to={`/purchase/${_id}`}>
-                    <Button size="small">Buy Now</Button>
+                <NavLink style={{ textDecoration: 'none' }} to={`/purchase/${_id}`}>
+                    <Button variant="contained" size="small">Buy Now</Button>
                 </NavLink>
             </CardActions>
         </Card>

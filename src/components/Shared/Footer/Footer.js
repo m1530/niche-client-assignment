@@ -20,7 +20,7 @@ const Footer = () => {
                 <Grid container spacing={8} sx={{ textAlign: 'start', mt: 5 }}>
                     <Grid item xs={12} md={3}>
                         <Typography variant="h6" component="h2" sx={{ fontWeight: 'bold' }}>
-                            Topcar
+                            Auto Mart
                         </Typography>
                         <Divider sx={{ width: '50%', mb: 2 }} />
                         <Typography variant="body2" component="p" sx={{ textAlign: 'start' }}>
@@ -54,7 +54,7 @@ const Footer = () => {
                                 </Grid>
                                 <Grid item xs={10}>
                                     <Typography variant="body2" sx={{ textAlign: 'start' }}>
-                                        info@topcar.com
+                                        info@Auto Mart.com
                                     </Typography>
                                 </Grid>
                             </Grid>
@@ -82,6 +82,7 @@ const Footer = () => {
                         <Box >
                             <Typography variant="body2" sx={{ display: 'flex', flexDirection: 'column' }}>
                                 <NavLink
+                                    style={{ textDecoration: 'none', color: 'black' }}
                                     activeStyle={{
                                         color: 'black',
                                         textDecoration: 'none',
@@ -89,27 +90,29 @@ const Footer = () => {
                                     }}
                                     to="/"
                                 >
-                                    FAQs
+                                    Home
                                 </NavLink>
                                 <NavLink
+                                    style={{ textDecoration: 'none', color: 'black' }}
                                     activeStyle={{
                                         color: 'black',
                                         textDecoration: 'none',
                                         textAlign: 'start'
                                     }}
-                                    to="/"
+                                    to="/review"
                                 >
-                                    FAQs
+                                    Review
                                 </NavLink>
                                 <NavLink
+                                    style={{ textDecoration: 'none', color: 'black' }}
                                     activeStyle={{
                                         color: 'black',
                                         textDecoration: 'none',
                                         textAlign: 'start'
                                     }}
-                                    to="/"
+                                    to="/About"
                                 >
-                                    FAQs
+                                    About US
                                 </NavLink>
                             </Typography>
                         </Box>

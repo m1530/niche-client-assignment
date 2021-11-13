@@ -1,107 +1,157 @@
+// [
+//     {
+//         "name": "SUNDARBAN TOUR",
+//         "img": "https://i.ibb.co/5BCbs8T/car1-640x400.jpg",
+//         "duration": "3 days",
+//         "price": "12000 TK",
+//         "desc": "The trip will start from Dhaka. Breakfast will be served at a local restaurant in Khulna town. After breakfast, our guide will pick you. Journey to sundhaban by boat. It’ll take 2 hours to reach sundhaban from where Army will escort our boat."
+//     },
+//     {
+//         "name": "Cox's Bazar - The Largest Sea Beach",
+//         "img": "https://i.ibb.co/vLbN4pM/car2-640x400.jpg",
+//         "duration": "5 days",
+//         "price": "16000 TK",
+//         "desc": "Upon arrival at Cox's Bazar check in at the hotel. Hotel Representative will pick you from the airport to the hotel. Early in the morning, arrive at Cox’s Bazar and check into the hotel. Have rest for a while before lunch. (Check-in time is 12: 00-2: 00 Pm. check-in is possible on arrival if the room is available. Otherwise, leave your luggage and have a refreshment in the waiting room area."
+//     },
+//     {
+//         "name": "Dhaka to Kuakata",
+//         "img": "https://i.ibb.co/1TvpksR/car3-640x400.jpg",
+//         "duration": "3 days",
+//         "price": "10000 TK",
+//         "desc": "Kuakata, the daughter of the sea, the green land of unparalleled beauty; Located in Patuakhali district. Kuakata is the only beach in South Asia where you can stand and watch the sunrise and sunset. Undoubtedly, it is a great thing to observe the rising of the sun through the belly of the sea and the disappearance of the sun in the middle of the sea."
+//     },
+//     {
+//         "name": "New delhi tour",
+//         "img": "https://i.ibb.co/GChtC2v/car4-640x400.jpg",
+//         "duration": "3 days",
+//         "price": "40000 TK",
+//         "desc": "With a history that goes back many centuries, Delhi showcases an ancient culture and a rapidly modernising country. Dotted with monuments there is much to discover here. The seat of many powerful empires in the past, its long history can be traced in its many carefully-preserved monuments, ancient forts and tombs."
+//     },
+//     {
+//         "name": "KLCC Twin tower",
+//         "img": "https://i.ibb.co/k0wwTkB/car5-640x400.jpg",
+//         "duration": "7 days",
+//         "price": "70000 TK",
+//         "desc": "Malaysia Travel Guide - Please note Malaysia has tentatively closed borders for International Tourism until further notice. If you are planning to visit in near future, you are requested to please reconsider your travel date or choose an alternate destination like Dubai, Maldives and Sri Lanka."
+//     },
+//     {
+//         "name": "Dhaka to Singapore Tour",
+//         "img": "https://i.ibb.co/cNqtkmt/car6-640x400.jpg",
+//         "duration": "4 days",
+//         "price": "80000 TK",
+//         "desc": "Singapore tour packages are aplenty. Picking the one basis your preferences, personality and pocket makes the difference. From its humble origins of a trading centre for the Chinese, Indonesians and Portuguese to a top holiday destination in the Southeast - Singapore has grown by leaps and bounds."
+//     },
+//     {
+//         "name": "HONG KONG ISLAND TOUR",
+//         "img": "https://i.ibb.co/X26ZcLC/car7-640x400.jpg",
+//         "duration": "4 days",
+//         "price": "60000 TK",
+//         "desc": "Experience hospitality at the city, from its stunning to vibrant culture, architecture and exquisite cuisines.Take a weekend trip on the occasion and create a memorable experience with your loved one. If you are a sun and sea lover, this paradise offers you an array of splendid sandy beaches, where you can spend time relaxing or go on a refreshing yacht experience. And if you are a history lover, explore the birthplace of many civilizations, empires, historic figures and legends together with diverse mixture of many different ethnic origins."
+//     },
+//     {
+//         "name": "Dobai Holiday Package",
+//         "img": "https://i.ibb.co/XDJ3s9D/car8-640x400.jpg",
+//         "duration": "15 days",
+//         "price": "160000 TK",
+//         "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
+//     },
+//     {
+//         "name": "Dobai Holiday Package",
+//         "img": "https://i.ibb.co/MR5Brpj/car9-1-640x400.jpg",
+//         "duration": "15 days",
+//         "price": "160000 TK",
+//         "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
+//     },
+//     {
+//         "name": "Dobai Holiday Package",
+//         "img": "https://i.ibb.co/mHkDxLd/car10-640x400.jpg",
+//         "duration": "15 days",
+//         "price": "160000 TK",
+//         "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
+//     },
+//     {
+//         "name": "Dobai Holiday Package",
+//         "img": "https://i.ibb.co/F8mP7xh/car11-640x400.jpg",
+//         "duration": "15 days",
+//         "price": "160000 TK",
+//         "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
+//     },
+//     {
+//         "name": "Dobai Holiday Package",
+//         "img": "https://i.ibb.co/v4VnkPg/car12-640x400.jpg",
+//         "duration": "15 days",
+//         "price": "160000 TK",
+//         "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
+//     },
+//     {
+//         "name": "Dobai Holiday Package",
+//         "img": "https://i.ibb.co/rygbD3G/car13-640x400.jpg",
+//         "duration": "15 days",
+//         "price": "160000 TK",
+//         "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
+//     },
+//     {
+//         "name": "Dobai Holiday Package",
+//         "img": "https://i.ibb.co/bzxFG22/car14-640x400.jpg",
+//         "duration": "15 days",
+//         "price": "160000 TK",
+//         "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
+//     },
+//     {
+//         "name": "Dobai Holiday Package",
+//         "img": "https://i.ibb.co/yfW8jk5/car15-640x400.jpg",
+//         "duration": "15 days",
+//         "price": "160000 TK",
+//         "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
+//     }
+// ]
 [
     {
-        "name": "SUNDARBAN TOUR",
-        "img": "https://i.ibb.co/5BCbs8T/car1-640x400.jpg",
-        "duration": "3 days",
-        "price": "12000 TK",
-        "desc": "The trip will start from Dhaka. Breakfast will be served at a local restaurant in Khulna town. After breakfast, our guide will pick you. Journey to sundhaban by boat. It’ll take 2 hours to reach sundhaban from where Army will escort our boat."
+        "name": "Mustang GT500 Heritage Edition Celebrates 55 Years",
+        "img": "https: //i.ibb.co/Dt0F438/news8.jpg",
+        "date": "Nov 12 2021",
+        "desc": "The Mustang Shelby GT500's Heritage Edition package is inspired by a livery from the original 1967 GT500. It's finished in a gorgeous Brittany Blue, and customers have the option of two different stripes, either in Wimbledon White or Absolute Black. The hand-painted option costs $10,000, just like on the standard car, while the vinyl option is standard and includes a side stripe."
     },
     {
-        "name": "Cox's Bazar - The Largest Sea Beach",
-        "img": "https://i.ibb.co/vLbN4pM/car2-640x400.jpg",
-        "duration": "5 days",
-        "price": "16000 TK",
-        "desc": "Upon arrival at Cox's Bazar check in at the hotel. Hotel Representative will pick you from the airport to the hotel. Early in the morning, arrive at Cox’s Bazar and check into the hotel. Have rest for a while before lunch. (Check-in time is 12: 00-2: 00 Pm. check-in is possible on arrival if the room is available. Otherwise, leave your luggage and have a refreshment in the waiting room area."
+        "name": "Rivian IPO Values Company at More Than $70 Billion",
+        "img": "https://i.ibb.co/jRB80st/news7.jpg",
+        "date": "Nov 12 2021",
+        "desc": "The Chevrolet C8.R race car’s 5.5-liter flat-plane-crank V-8 engine laid the groundwork for the engine used in the new C8 Corvette Z06, which returns to its purist heritage for 2023. And things are only heating up for Corvette racing because the C8.R will be replaced by this new Z06 GT3.R starting for the 2024 season, and a customer racing version will be available, too, just like BMW, Ferrari, McLaren, and Porsche, to name a few, have done for years."
     },
     {
-        "name": "Dhaka to Kuakata",
-        "img": "https://i.ibb.co/1TvpksR/car3-640x400.jpg",
-        "duration": "3 days",
-        "price": "10000 TK",
-        "desc": "Kuakata, the daughter of the sea, the green land of unparalleled beauty; Located in Patuakhali district. Kuakata is the only beach in South Asia where you can stand and watch the sunrise and sunset. Undoubtedly, it is a great thing to observe the rising of the sun through the belly of the sea and the disappearance of the sun in the middle of the sea."
+        "name": "2022 Toyota RAV4 Gains New Headlights, SE Hybrid",
+        "img": "https://i.ibb.co/6DQbbfD/news6.jpg",
+        "date": "Nov 11 2021",
+        "desc": "UPDATE 11/11/21: Rivian’s stock price climbed to $100.73 per share by the time the markets closed yesterday, after starting at $78. This rise puts Rivian’s valuation over $100 billion. At the time of writing, the price has increased to about $123 per share."
     },
     {
-        "name": "New delhi tour",
-        "img": "https://i.ibb.co/GChtC2v/car4-640x400.jpg",
-        "duration": "3 days",
-        "price": "40000 TK",
-        "desc": "With a history that goes back many centuries, Delhi showcases an ancient culture and a rapidly modernising country. Dotted with monuments there is much to discover here. The seat of many powerful empires in the past, its long history can be traced in its many carefully-preserved monuments, ancient forts and tombs."
+        "name": "2023 Subaru Solterra Enters Growing EV SUV Market",
+        "img": "https://i.ibb.co/q0Q8H1x/news5.jpg",
+        "date": "Nov 10 2021",
+        "desc": "Besides the full-sized pickup trucks from the Big Three, the Toyota RAV4 is America’s best-selling vehicle, totaling 313,447 units sold through the third quarter of 2021. Now Toyota has announced a slew of updates for the 2022 RAV4, including new colors, redesigned headlights, and a new SE Hybrid trim."
     },
     {
-        "name": "KLCC Twin tower",
-        "img": "https://i.ibb.co/k0wwTkB/car5-640x400.jpg",
-        "duration": "7 days",
-        "price": "70000 TK",
-        "desc": "Malaysia Travel Guide - Please note Malaysia has tentatively closed borders for International Tourism until further notice. If you are planning to visit in near future, you are requested to please reconsider your travel date or choose an alternate destination like Dubai, Maldives and Sri Lanka."
+        "name": "2023 Acura Integra Prototype Is the Comeback Kid",
+        "img": "https://i.ibb.co/C9wDRH6/news4.jpg",
+        "date": "Aug 12 2021",
+        "desc": "Playing off its reputation for sensible, earth-friendly adventure vehicles, Subaru joins the EV marketplace with a small crossover designed around the outdoorsy activities Subaru owners are known for. The 2023 Solterra—whose name is a combination of the Latin words for “Sun” and “Earth,” is a small, AWD, two-motor electric SUV that's closely related to Toyota’s bZ4X but is tweaked to appeal to the Subaru customer."
     },
     {
-        "name": "Dhaka to Singapore Tour",
-        "img": "https://i.ibb.co/cNqtkmt/car6-640x400.jpg",
-        "duration": "4 days",
-        "price": "80000 TK",
-        "desc": "Singapore tour packages are aplenty. Picking the one basis your preferences, personality and pocket makes the difference. From its humble origins of a trading centre for the Chinese, Indonesians and Portuguese to a top holiday destination in the Southeast - Singapore has grown by leaps and bounds."
+        "name": "Ferrari BR20 One-Off Is a Sleeker GTC4Lusso",
+        "img": "https://i.ibb.co/NxxzMX2/news3.jpg",
+        "date": "Nov 11 2021",
+        "desc": "When the Acura Integra departed the U.S. market in 2001, it was also the final model in the Acura lineup with a pronounceable name. Twenty years later, the Integra is also the first model to bring it back. Replacing the ILX in the Acura lineup, the Integra is primed to cater to both nostalgia buffs and young enthusiasts alike."
     },
     {
-        "name": "HONG KONG ISLAND TOUR",
-        "img": "https://i.ibb.co/X26ZcLC/car7-640x400.jpg",
-        "duration": "4 days",
-        "price": "60000 TK",
-        "desc": "Experience hospitality at the city, from its stunning to vibrant culture, architecture and exquisite cuisines.Take a weekend trip on the occasion and create a memorable experience with your loved one. If you are a sun and sea lover, this paradise offers you an array of splendid sandy beaches, where you can spend time relaxing or go on a refreshing yacht experience. And if you are a history lover, explore the birthplace of many civilizations, empires, historic figures and legends together with diverse mixture of many different ethnic origins."
+        "name": "Chevy Corvette Z06 GT3.R Is for Customer Racing",
+        "img": "https://i.ibb.co/V0F3Ctk/news2.jpg",
+        "date": "Nov 08 2021",
+        "desc": "Nearly every year, Ferrari’s Special Projects division crafts an exquisite, limited-production model for a select group of extremely wealthy clientele. Last year it was the Omologata, a sleek one-off based on the 812 Superfast, while 2019 brought the bonkers P80/C, a unique track toy using the 488 GT3 as a starting point. As 2021 draws to a close, Ferrari’s Special Projects team has burst back on the scene with the BR20, a two-seat V-12 coupe developed from the GTC4Lusso shooting brake as an homage to the iconic Ferrari coupes of the ‘50s and ‘60s."
     },
     {
-        "name": "Dobai Holiday Package",
-        "img": "https://i.ibb.co/XDJ3s9D/car8-640x400.jpg",
-        "duration": "15 days",
-        "price": "160000 TK",
-        "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
-    },
-    {
-        "name": "Dobai Holiday Package",
-        "img": "https://i.ibb.co/MR5Brpj/car9-1-640x400.jpg",
-        "duration": "15 days",
-        "price": "160000 TK",
-        "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
-    },
-    {
-        "name": "Dobai Holiday Package",
-        "img": "https://i.ibb.co/mHkDxLd/car10-640x400.jpg",
-        "duration": "15 days",
-        "price": "160000 TK",
-        "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
-    },
-    {
-        "name": "Dobai Holiday Package",
-        "img": "https://i.ibb.co/F8mP7xh/car11-640x400.jpg",
-        "duration": "15 days",
-        "price": "160000 TK",
-        "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
-    },
-    {
-        "name": "Dobai Holiday Package",
-        "img": "https://i.ibb.co/v4VnkPg/car12-640x400.jpg",
-        "duration": "15 days",
-        "price": "160000 TK",
-        "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
-    },
-    {
-        "name": "Dobai Holiday Package",
-        "img": "https://i.ibb.co/rygbD3G/car13-640x400.jpg",
-        "duration": "15 days",
-        "price": "160000 TK",
-        "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
-    },
-    {
-        "name": "Dobai Holiday Package",
-        "img": "https://i.ibb.co/bzxFG22/car14-640x400.jpg",
-        "duration": "15 days",
-        "price": "160000 TK",
-        "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
-    },
-    {
-        "name": "Dobai Holiday Package",
-        "img": "https://i.ibb.co/yfW8jk5/car15-640x400.jpg",
-        "duration": "15 days",
-        "price": "160000 TK",
-        "desc": " Dubai opened for all Vaccinated Travelers approved by WHO.- 8 hours RTPCR test before departure from India, cost to be borne by the customer - Vaccination Certificate, only WHO-approved vaccine - Rapid Test @ India airport, prior to boarding flight, the cost to be borne by the customer - Rapid Test @ Dxb airport, complimentary - 72 hours RTPCR test prior to departure in Dxb, cost to be borne by the customer."
+        "name": "Kia EV9, Hyundai Ioniq 7 EV SUVs Coming Soon",
+        "img": "https://i.ibb.co/1JQ1ywt/news1.jpg",
+        "date": "Nov 08 2021",
+        "desc": "Hyundai Motor Group's electric lineup is growing, as Kia promises 11 new electric vehicles by 2026 and Hyundai 23 by 2025. Both brands have teased their coming EV SUVs in concept form, and both will debut soon. The Kia EV9 concept, which will be a large SUV like the 10Best-winning Telluride, will be revealed November 11 at 3 a.m. Eastern time, while the Ioniq 7 concept will debut November 17 at 12:55 pm, during the L.A. auto show."
     }
 ]

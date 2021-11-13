@@ -3,44 +3,44 @@ import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
 
-const CreateReview = () => {
+const AddNews = () => {
+    const [name, setName] = useState('');
+    const [date, setDate] = useState('');
+    const [desc, setDesc] = useState('');
+    const [img, setImg] = useState('');
 
-    const [reviewer, setReviewer] = useState('');
-    const [designation, setDesignation] = useState('');
-    const [reviewDesc, setReviewDesc] = useState('');
-    const [ratting, setRatting] = useState('');
-    // take all input value
+    // take all input value and store in state
     const handleName = e => {
         const value = e.target.value;
-        setReviewer(value);
+        setName(value);
     }
-    const handleDesignation = e => {
+    const handledate = e => {
         const value = e.target.value;
-        setDesignation(value);
+        setDate(value);
     }
     const handleDesc = e => {
         const value = e.target.value;
-        setReviewDesc(value);
+        setDesc(value);
     }
-    const handleRatting = e => {
+    const handleImg = e => {
         const value = e.target.value;
-        setRatting(value);
+        setImg(value);
     }
 
-    // submit form request
-    const handleReview = e => {
-        const reviewData = { reviewer, designation, reviewDesc, ratting }
-        fetch('http://localhost:7000/makeReview', {
+    // handle request submit from
+    const handleNews = e => {
+        const newsData = { name, img, date, desc }
+        fetch('http://localhost:7000/addNews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(reviewData)
+            body: JSON.stringify(newsData)
         })
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('Review Create Successfully');
+                    alert('News Create Successfully');
                     e.target.reset();
                 }
             })
@@ -48,15 +48,15 @@ const CreateReview = () => {
     }
     return (
         <div>
-            {/* create review form */}
-            <form onSubmit={handleReview}>
+            {/* create news from */}
+            <form onSubmit={handleNews}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                     <Typography variant="h4" gutterBottom component="div">
-                        Create Review
+                        Create A New News
                     </Typography>
                     <TextField
                         sx={{ width: '75%', m: 2, }}
-                        label="Enter Your name"
+                        label="Enter news headline"
                         type="text"
                         variant="filled"
                         size="small"
@@ -65,14 +65,22 @@ const CreateReview = () => {
                     />
                     <TextField
                         sx={{ width: '75%', m: 2, }}
-                        label="Enter Your Designation and Company"
+                        label="Image link"
                         variant="filled"
                         size="small"
-                        name="designation"
-                        type="text"
-                        onBlur={handleDesignation}
+                        name="img"
+                        type="url"
+                        onBlur={handleImg}
                     />
 
+                    <TextField
+                        sx={{ width: '75%', m: 2, }}
+                        variant="filled"
+                        size="small"
+                        name="date"
+                        type="datetime-local"
+                        onBlur={handledate}
+                    />
                     <TextareaAutosize
                         aria-label="minimum height"
                         minRows={3}
@@ -81,16 +89,7 @@ const CreateReview = () => {
                         type="text"
                         onBlur={handleDesc}
                     />
-                    <TextField
-                        sx={{ width: '75%', m: 2, }}
-                        label="Ratting input 0-5 any number"
-                        variant="filled"
-                        size="small"
-                        name="ratting"
-                        type="number"
-                        onBlur={handleRatting}
-                    />
-                    <Button sx={{ width: '25%', bgcolor: '#ff9933', fontWeight: 'bold' }} type="submit" variant="contained" >Create</Button>
+                    <Button sx={{ width: '25%', bgcolor: '#ff9933', fontWeight: 'bold', mt: 2 }} type="submit" variant="contained" >Create</Button>
 
                 </Box>
             </form>
@@ -98,4 +97,5 @@ const CreateReview = () => {
     );
 };
 
-export default CreateReview;
+
+export default AddNews;

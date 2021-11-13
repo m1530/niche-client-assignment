@@ -5,7 +5,6 @@ import {
     Typography,
     useMediaQuery,
     useTheme,
-    Container,
     AppBar,
     Button,
 } from "@mui/material";
@@ -25,7 +24,7 @@ const Navigation = () => {
     const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
-        <Box elevation={0} sx={{ flexGrow: 1 }}>
+        <Box elevation={0} sx={{ flexGrow: 1 }} id="carousel">
             <AppBar position="sticky" style={{ backgroundColor: '#3366ff' }}>
                 <Toolbar>
                     <Box
@@ -51,7 +50,7 @@ const Navigation = () => {
                                     }}>
                                         <DirectionsCarIcon sx={{ fontSize: "2.4rem", marginRight: '6px', color: 'white' }} />
                                         <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'white' }}>
-                                            Topcar
+                                            Auto Mart
                                         </Typography>
                                     </Box>
                                 </NavLink>
@@ -91,6 +90,21 @@ const Navigation = () => {
                                             color: 'white',
                                             textDecoration: 'none',
                                         }}
+                                        to="/about"
+                                    >
+                                        About
+                                    </NavLink>
+                                </Box>
+                                <Box>
+                                    <NavLink
+                                        style={{
+                                            marginRight: '15px', color: 'white', textDecoration: 'none'
+                                        }}
+                                        activeStyle={{
+                                            fontWeight: "bold",
+                                            color: 'white',
+                                            textDecoration: 'none',
+                                        }}
                                         to="/products"
                                     >
                                         Products
@@ -106,9 +120,22 @@ const Navigation = () => {
                                             color: 'white',
                                             textDecoration: 'none',
                                         }}
-                                        to="/products"
+                                        to="/review"
                                     >
                                         Review
+                                    </NavLink>
+                                    <NavLink
+                                        style={{
+                                            marginRight: '15px', color: 'white', textDecoration: 'none'
+                                        }}
+                                        activeStyle={{
+                                            fontWeight: "bold",
+                                            color: 'white',
+                                            textDecoration: 'none',
+                                        }}
+                                        to="/allNews"
+                                    >
+                                        Latest News
                                     </NavLink>
                                     {
                                         user?.email && <NavLink
@@ -124,6 +151,12 @@ const Navigation = () => {
                                         >
                                             Dashboard
                                         </NavLink>
+                                    }
+                                </Box>
+                                <Box>
+                                    {
+                                        user?.displayName && <Button style={{ color: 'white' }} size="small" >{user.displayName}</Button>
+
                                     }
                                 </Box>
                                 <Box>

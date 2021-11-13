@@ -3,34 +3,34 @@ import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
 
-const CreateReview = () => {
+const AddProduct = () => {
 
-    const [reviewer, setReviewer] = useState('');
-    const [designation, setDesignation] = useState('');
-    const [reviewDesc, setReviewDesc] = useState('');
-    const [ratting, setRatting] = useState('');
-    // take all input value
+    const [name, setName] = useState('');
+    const [desc, setDesc] = useState('');
+    const [img, setImg] = useState('');
+    const [price, setPrice] = useState('');
+
+    // take all input info from input field and store in state
     const handleName = e => {
         const value = e.target.value;
-        setReviewer(value);
-    }
-    const handleDesignation = e => {
-        const value = e.target.value;
-        setDesignation(value);
+        setName(value);
     }
     const handleDesc = e => {
         const value = e.target.value;
-        setReviewDesc(value);
+        setDesc(value);
     }
-    const handleRatting = e => {
+    const handleImg = e => {
         const value = e.target.value;
-        setRatting(value);
+        setImg(value);
     }
-
-    // submit form request
-    const handleReview = e => {
-        const reviewData = { reviewer, designation, reviewDesc, ratting }
-        fetch('http://localhost:7000/makeReview', {
+    const handlePrice = e => {
+        const value = e.target.value;
+        setPrice(value);
+    }
+    // function for submit handle request
+    const handleAddProduct = e => {
+        const reviewData = { name, img, desc, price }
+        fetch('http://localhost:7000/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -40,7 +40,7 @@ const CreateReview = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('Review Create Successfully');
+                    alert('Product Added Successfully');
                     e.target.reset();
                 }
             })
@@ -48,31 +48,39 @@ const CreateReview = () => {
     }
     return (
         <div>
-            {/* create review form */}
-            <form onSubmit={handleReview}>
+            {/* Form for create a new product */}
+            <form onSubmit={handleAddProduct}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                     <Typography variant="h4" gutterBottom component="div">
-                        Create Review
+                        Create A New Product
                     </Typography>
                     <TextField
                         sx={{ width: '75%', m: 2, }}
-                        label="Enter Your name"
+                        label="Enter product name"
                         type="text"
                         variant="filled"
                         size="small"
                         name="name"
                         onBlur={handleName}
                     />
-                    <TextField
+                    {/* <TextField
                         sx={{ width: '75%', m: 2, }}
                         label="Enter Your Designation and Company"
                         variant="filled"
                         size="small"
-                        name="designation"
+                        name="desc"
                         type="text"
                         onBlur={handleDesignation}
+                    /> */}
+                    <TextField
+                        sx={{ width: '75%', m: 2, }}
+                        label="Image link"
+                        variant="filled"
+                        size="small"
+                        name="img"
+                        type="url"
+                        onBlur={handleImg}
                     />
-
                     <TextareaAutosize
                         aria-label="minimum height"
                         minRows={3}
@@ -83,12 +91,12 @@ const CreateReview = () => {
                     />
                     <TextField
                         sx={{ width: '75%', m: 2, }}
-                        label="Ratting input 0-5 any number"
+                        label="Product Price"
                         variant="filled"
                         size="small"
-                        name="ratting"
+                        name="price"
                         type="number"
-                        onBlur={handleRatting}
+                        onBlur={handlePrice}
                     />
                     <Button sx={{ width: '25%', bgcolor: '#ff9933', fontWeight: 'bold' }} type="submit" variant="contained" >Create</Button>
 
@@ -98,4 +106,4 @@ const CreateReview = () => {
     );
 };
 
-export default CreateReview;
+export default AddProduct;

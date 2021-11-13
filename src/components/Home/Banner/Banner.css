@@ -6,9 +6,13 @@
     background: #000;
     color: #fff;
     padding: 10px;
-    font-size: 12px;
+    font-size: 20px;
     text-align: center;
 }
+
+ .banner-img{
+        height: 580px;
+    }
 
 @media only screen and (max-width: 600px) {
     .banner-img{

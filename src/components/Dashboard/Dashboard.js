@@ -6,23 +6,15 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import useAuth from '../../hooks/useAuth';
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
     Link,
-    useParams,
     useRouteMatch
 } from "react-router-dom";
 import Payments from './Payments/Payments';
@@ -31,10 +23,16 @@ import MakeAdmin from './MakeAdmin/MakeAdmin';
 import AdminRoute from '../Login/AdminRoute/AdminRoute';
 import UserDashboard from './UserDashboard/UserDashboard';
 import CreateReview from './CreateReview/CreateReview';
+import AddProduct from './AddProduct/AddProduct';
+import ManageProducts from './ManageProducts/ManageProducts';
+import ManageOrder from './ManageOrder/ManageOrder';
+import AddNews from './AddNews/AddNews';
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 
 
 
-const drawerWidth = 240;
+
+const drawerWidth = 180;
 
 function Dashboard(props) {
     const { window } = props;
@@ -48,22 +46,42 @@ function Dashboard(props) {
     const drawer = (
         <div>
             <Toolbar />
+            <Box sx={{
+                display: 'flex', justifyContent: "center", alignItems: "center", mb: 1, color: 'blue'
+            }}>
+                <DirectionsCarIcon sx={{ fontSize: "2.4rem", marginRight: '6px' }} />
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    Auto Mart
+                </Typography>
+            </Box>
             <Divider />
             <Box style={{ display: 'flex', flexDirection: 'column', marginLeft: '16px' }}>
 
-                <Link to={`${url}`}><Button color="inherit">Dashboard</Button></Link>
+                <Link style={{ textDecoration: 'none' }} to={`${url}`}><Button color="inherit">Dashboard</Button></Link>
+                <Link style={{ textDecoration: 'none' }} to='/'><Button color="inherit">Website Home</Button></Link>
 
-                <Link style={{ textDecoration: 'none' }} style={{ textDecoration: 'none' }} to="/products"><Button color="inherit">Purchase</Button></Link>
-                <Link style={{ textDecoration: 'none' }} to='/'><Button color="inherit">Home</Button></Link>
-
-                <Link style={{ textDecoration: 'none' }} to={`${url}/payments`}><Button color="inherit">Payments</Button></Link>
-                <Link style={{ textDecoration: 'none' }} to={`${url}/myorders/${user.email}`}><Button color="inherit">My orders</Button></Link>
-                <Link style={{ textDecoration: 'none' }} to={`${url}/createReview`}><Button color="inherit">Create Review</Button></Link>
                 {
-                    admin && <Box style={{ display: 'flex', flexDirection: 'column' }}>
+                    // functionality for admin
+                    user.email && admin ? <Box style={{ display: 'flex', flexDirection: 'column' }}>
                         <Link style={{ textDecoration: 'none' }} to={`${url}/adminMake`}><Button color="inherit">Make Admin</Button></Link>
-                        <Link style={{ textDecoration: 'none' }} to='/'><Button color="inherit">Add Doctor</Button></Link>
+
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/addproduct`}><Button color="inherit">Add Product</Button></Link>
+
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/addNews`}><Button color="inherit">Add News</Button></Link>
+
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/manageporducts`}><Button color="inherit">Manage Product</Button></Link>
+
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/manageOrder`}><Button color="inherit">Manage Order</Button></Link>
+
                     </Box>
+                        :
+                        <Box style={{ display: 'flex', flexDirection: 'column' }}>
+                            {/* functionality for user */}
+                            <Link style={{ textDecoration: 'none' }} to="/products"><Button color="inherit">Purchase</Button></Link>
+                            <Link style={{ textDecoration: 'none' }} to={`${url}/payments`}><Button color="inherit">Payments</Button></Link>
+                            <Link style={{ textDecoration: 'none' }} to={`${url}/myorders/${user.email}`}><Button color="inherit">My orders</Button></Link>
+                            <Link style={{ textDecoration: 'none' }} to={`${url}/createReview`}><Button color="inherit">Create Review</Button></Link>
+                        </Box>
                 }
                 <Button style={{ color: 'blue', width: '50%' }} size="small" onClick={logout}>Logout</Button>
 
@@ -94,7 +112,7 @@ function Dashboard(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Responsive drawer
+                        Welcome To Mr. {user.displayName}
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -135,7 +153,7 @@ function Dashboard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-
+                {/* dashboard routing */}
                 <Switch>
                     <Route exact path={path}>
                         <UserDashboard></UserDashboard>
@@ -151,6 +169,18 @@ function Dashboard(props) {
                     </Route>
                     <AdminRoute path={`${path}/adminMake`}>
                         <MakeAdmin></MakeAdmin>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addproduct`}>
+                        <AddProduct></AddProduct>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageporducts`}>
+                        <ManageProducts></ManageProducts>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageOrder`}>
+                        <ManageOrder></ManageOrder>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addNews`}>
+                        <AddNews></AddNews>
                     </AdminRoute>
                 </Switch>
 
