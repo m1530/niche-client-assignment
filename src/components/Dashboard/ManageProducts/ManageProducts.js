@@ -40,6 +40,7 @@ export default function ManageProducts() {
     return (
         <Box>
             <Container>
+                <h1>Manage Products</h1>
                 {/* display all product in table */}
                 <TableContainer component={Paper} style={{ overFlowX: 'auto' }}>
                     <Table aria-label="simple table" sx={{ width: '50%' }}>

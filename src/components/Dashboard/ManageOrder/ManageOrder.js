@@ -62,6 +62,7 @@ export default function ManageOrder() {
     return (
         <Box>
             <Container>
+                <h1>Manage Order</h1>
                 {/* in datatable show all order info */}
                 <TableContainer component={Paper} style={{ overFlowX: 'auto' }} sx={{ width: '70%' }}>
                     <Table aria-label="simple table">

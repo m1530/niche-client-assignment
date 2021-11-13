@@ -49,6 +49,7 @@ const MyOrder = () => {
     return (
 
         <Box>
+            <h1>My Order List</h1>
             {/* load My order like list */}
             {
                 myOrder.map(row => (

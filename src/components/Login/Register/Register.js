@@ -90,7 +90,7 @@ const Register = () => {
                                         name="password"
                                         onBlur={handlePasswordOnBlur}
                                     />
-                                    <Button sx={{ width: '25%', bgcolor: '#ff9933', fontWeight: 'bold' }} type="submit" variant="contained" className={classes.root}>Register</Button>
+                                    <Button sx={{ width: '45%', bgcolor: '#ff9933', fontWeight: 'bold' }} type="submit" variant="contained" className={classes.root}>Register</Button>
 
                                     <NavLink
                                         style={{ textDecoration: 'none', fontWeight: 'bold', marginTop: '20px' }}

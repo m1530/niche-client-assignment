@@ -63,10 +63,10 @@ const useFirebase = () => {
     // load admin
 
     useEffect(() => {
-        fetch(`https://nameless-journey-27300.herokuapp.com/users/${user.email}`)
+        fetch(`https://nameless-journey-27300.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin));
-    }, [user.email]);
+    }, [user?.email]);
 
     // login user
     const logIn = (email, password, location, history) => {
