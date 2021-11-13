@@ -80,7 +80,7 @@ const Login = () => {
                                     name="password"
                                     onBlur={handlePassword}
                                 />
-                                <Button sx={{ width: '25%', bgcolor: '#ff9933', fontWeight: 'bold' }} type="submit" variant="contained" className={classes.root}>Log in</Button>
+                                <Button sx={{ width: '45%', bgcolor: '#ff9933', fontWeight: 'bold' }} type="submit" variant="contained" className={classes.root}>Log in</Button>
 
                                 <NavLink
                                     style={{ textDecoration: 'none', fontWeight: 'bold', marginTop: '20px' }}

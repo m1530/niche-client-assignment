@@ -1,7 +1,7 @@
 # Auto Mart
 
-## Website link: [Holidays Tour](https://travel-client-480aa.web.app/).
-### This project servers side link:  [server side link](https://howling-cat-22658.herokuapp.com).
+## Website link: [Auto Mart](https://car-website-5710a.web.app/).
+### This project servers side link:  [server side link](https://nameless-journey-27300.herokuapp.com).
 
 * ### in home route i have to show header, footer, banner, about, products latest news and our reviews.
 * ### in products section display all products and each product shows product name, image, description, price and buy button.
