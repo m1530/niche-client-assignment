@@ -1,16 +1,8 @@
 import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { Container } from '@mui/material';
-import { Box } from '@mui/system';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import useManageOrder from '../../../hooks/useManageOrder';
+import './ManageOrder.css';
 
 
 
@@ -60,48 +52,33 @@ export default function ManageOrder() {
     }
 
     return (
-        <Box>
-            <Container>
-                <h1>Manage Order</h1>
-                {/* in datatable show all order info */}
-                <TableContainer component={Paper} style={{ overFlowX: 'auto' }} sx={{ width: '70%' }}>
-                    <Table aria-label="simple table">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell size="small">User Name</TableCell>
-                                <TableCell size="small">Product Name</TableCell>
-                                <TableCell size="small" align="left">Email</TableCell>
-                                <TableCell size="small" align="left">Status</TableCell>
-                                <TableCell size="small" align="left">Action</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {orders.map((row) => (
-                                <TableRow
-                                    key={row._id}
-                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                >
-                                    <TableCell size="small" className="table-width">
-                                        {row.userName}
-                                    </TableCell>
-                                    <TableCell size="small" align="left" className="table-width">
-                                        {row.ProductName}
-                                    </TableCell>
-                                    <TableCell size="small" align="left" className="table-width">
-                                        {row.email}
-                                    </TableCell>
-                                    <TableCell size="small" align="left" className="table-width">
-                                        {row.status}
-                                    </TableCell>
-                                    <TableCell size="small" align="left" className="table-width">
-                                        <DeleteForeverIcon style={{ cursor: 'pointer' }} onClick={() => handleOrderDelete(row._id)} />| <AutorenewIcon style={{ cursor: 'pointer' }} onClick={() => handleStatusUpdate(row._id)} />
-                                    </TableCell>
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </Container>
-        </Box>
+
+        <table>
+            <caption>Manage Order</caption>
+            <thead>
+                <tr>
+                    <th scope="col">User Name</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {orders.map((row) => (<tr key={row._id}>
+                    <td data-label="User Name"> {row.userName}</td>
+                    <td data-label="Product Name">{row.ProductName}</td>
+                    <td data-label="Email">{row.email}</td>
+                    <td data-label="Address">{row.address}</td>
+                    <td data-label="Status">{row.status}</td>
+                    <td data-label="Action">
+                        <DeleteForeverIcon style={{ cursor: 'pointer' }} onClick={() => handleOrderDelete(row._id)} />| <AutorenewIcon style={{ cursor: 'pointer' }} onClick={() => handleStatusUpdate(row._id)} />
+                    </td>
+                </tr>
+                ))}
+            </tbody>
+        </table>
+
     );
 }
